@@ -1,0 +1,24 @@
+<h1>{{name}}</h1>
+
+<dl>
+    <td>Nombre:</td>
+    <dd>{{name}}</dd>
+
+    <td>Edad:</td>
+    <dd>{{age}}</dd>
+
+    <td>Metodo:</td>
+    <dd>{{getHeroDescription()}}</dd>
+
+    <td>capitalizado:</td>
+    <dd>{{capitalizeName}}</dd>
+</dl>
+
+
+<button class="btn btn-primary mx-2" (click)="changeHero()">
+    cambiar nombre
+</button>
+
+<button class="btn btn-primary mx-2" (click)="chageAge()">
+    cambiar edad
+</button>
