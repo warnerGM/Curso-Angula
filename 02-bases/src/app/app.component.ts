@@ -9,6 +9,3 @@ export class AppComponent {
  public title: string = 'hola mundo';
 
 }
-
-
-
