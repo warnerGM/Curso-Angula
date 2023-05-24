@@ -26,4 +26,10 @@ chageAge():void{
 this.age = 25;
 }
 
+resetForm():void{
+  this.name = 'Iroman'
+  this.age = 45;
+  }
+
+
 }
