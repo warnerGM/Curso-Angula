@@ -7,18 +7,19 @@
   let iseven = even
   let isodd = odd; 
   "
-   class="list-group-item "
+   class="list-group-item d-flex justify-content-between align-items-center"
    [ngClass]="{
-    'list-group-item-success': iseven,
-    'list-group-item-warning': isodd,
+    'list-group-item-primary': iseven,
+    'list-group-item-secondary': isodd,
 
   }">
-
+  <div> 
    <span class="text-primary">{{i + 1}}.</span>
    <span>{{character.name}} -</span>
    <strong>power:</strong>
   <span> {{character.power}}</span>
-  
+  </div>
+  <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">Borrar</button>
 
   </li>
   
