@@ -7,6 +7,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContacPageComponent } from './pages/contac-page/contac-page.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { LoadingSpinerComponent } from './components/loading-spiner/loading-spiner.component';
 
 
 
@@ -16,8 +17,9 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     AboutPageComponent,
     ContacPageComponent,
     HomePageComponent,
-    SidebarComponent,
+    LoadingSpinerComponent,
     SearchBoxComponent,
+    SidebarComponent,
     
   ],
   imports: [
@@ -28,8 +30,9 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     AboutPageComponent,
     ContacPageComponent,
     HomePageComponent,
+    LoadingSpinerComponent,
+    SearchBoxComponent,
     SidebarComponent,
-    SearchBoxComponent
 
   ]
 })
