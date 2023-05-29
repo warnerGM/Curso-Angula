@@ -6,13 +6,13 @@ import { Country } from '../../interfaces/country';
   templateUrl: './country-table.component.html',
   styles: [
     `img{
-      width: 40px;
+      width: 35px;
     }`
   ]
 })
 export class CountryTableComponent {
 
   @Input()
-  public countries: Country[ ]=[]
+  public countries: Country[]=[]
 
 }
