@@ -11,8 +11,15 @@ import { Country } from '../../interfaces/country';
 export class ByCountryPageComponent {
 public countries: Country[]=[];
 public isLoading:boolean = false;
+public initialValue2: string='';
 
 constructor(private countriesService:countriesService){}
+
+ngOnInit(): void {
+  this.countries = this.countriesService.cacheStore.byCountry.countries;
+
+  this.initialValue2 = this.countriesService.cacheStore.byCountry.term;
+}
 
 searchByCountry(term:string):void{
   this.isLoading=true;
