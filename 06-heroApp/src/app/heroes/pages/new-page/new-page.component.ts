@@ -4,7 +4,7 @@ import { Publisher, Hero } from '../../interface/hero.interface';
 import { HeroesService } from '../../service/heroes.service';
 import { HeroImagePipe } from '../../pipes/hero-image.pipe';
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { filter, switchMap, tap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
@@ -90,12 +90,29 @@ onDeleteHero(){
     data: this.heroForm.value
   });
 
-  dialogref.afterClosed().subscribe(result =>{
-    if(!result) return;
+  dialogref.afterClosed()
+  .pipe(
+    filter((result:boolean) => result ),
+    switchMap(()=> this.heroesService.deleteHeroById(this.currentHero.id)),
+    filter((wasDeleted:boolean)=> wasDeleted)
 
-    this.heroesService.deleteHeroById(this.currentHero.id);
+    )
+  .subscribe(result =>{
     this.router.navigate(['/heroes'])
   })
+
+
+  // dialogref.afterClosed().subscribe(result =>{
+  //   if(!result) return;
+
+  //   this.heroesService.deleteHeroById(this.currentHero.id)
+  //   .subscribe(wasDeleted =>{
+  //     if (wasDeleted) 
+  //     this.router.navigate(['/heroes'])
+      
+  //   })
+    
+  // });
 
 }
 

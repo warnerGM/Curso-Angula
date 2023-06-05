@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "usuario": "John Doe",
+      "user": "John Doe",
       "email": "john.due@gmail.com"
     }
   ],
@@ -21,8 +21,7 @@
       "publisher": "DC Comics",
       "alter_ego": "Kal-El",
       "first_appearance": "Action Comics #1",
-      "characters": "Kal-El",
-      "alt_img": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Superman-1943.jpg"
+      "characters": "Kal-El"
     },
     {
       "id": "dc-flash",
@@ -167,33 +166,6 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
-    },
-    {
-      "id": "SGIHplA",
-      "superhero": "https://static.wikia.nocookie.net/marvel_dc/images/c/c3/Katar_Hol_Prime_Earth_001.jpg/revision/latest?cb=20130319222853",
-      "publisher": "DC Comics",
-      "alter_ego": "sisalril",
-      "first_appearance": "comic sisalril 2011",
-      "characters": "walner",
-      "alt_img": ""
-    },
-    {
-      "id": "zcNFaOV",
-      "superhero": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Captain-america_serial_poster.jpg",
-      "publisher": "DC Comics",
-      "alter_ego": "sisalril",
-      "first_appearance": "comic sisalril 2011",
-      "characters": "walner",
-      "alt_img": ""
-    },
-    {
-      "id": "egiJrD6",
-      "superhero": "wman",
-      "publisher": "DC Comics",
-      "alter_ego": "lol",
-      "first_appearance": "#1",
-      "characters": "wman",
-      "alt_img": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Captain-america_serial_poster.jpg"
     }
   ]
 }

@@ -6,8 +6,13 @@ import { environments } from 'src/environments/environments';
 
 @Injectable({providedIn: 'root'})
 export class HeroesService {
-    deleteHeroById(id: string) {
-      throw new Error('Method not implemented.');
+    deleteHeroById(id: string):Observable<boolean> {
+      return this.http.delete(`${ this.baseUrl }/heroes/${ id }`)
+      .pipe(
+        map( resp => true ),
+        catchError( err => of(false) ),
+      );
+  
     }
 
     private baseUrl:string= environments.baseUrl;
