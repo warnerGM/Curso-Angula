@@ -1,6 +1,9 @@
  import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { canBestrider } from 'src/app/shared/validators/validators.function';
+import { ValidatorsService } from 'src/app/shared/service/validators.service';
+import { emailValidatorService } from 'src/app/shared/validators/email-validators.service';
+// import * as customValidators from 'src/app/shared/validators/validators.function';
+
 
 @Component({
   templateUrl: './register-page.component.html',
@@ -10,18 +13,27 @@ import { canBestrider } from 'src/app/shared/validators/validators.function';
 export class RegisterPageComponent {
 
   public myForm = this.fb.group({
-    name: ['',[Validators.required]],
-    email: ['',[Validators.required]],
-    username:['',[Validators.required,canBestrider]],
+    name: ['',[Validators.required, Validators.pattern(this.validatorsService.firstNameAndLastnamePattern)]],
+    // email: ['',[Validators.required,Validators.pattern(this.validatosrtService.emailPattern)],[new emailValidatorService()]],
+    email: ['',[Validators.required,Validators.pattern(this.validatorsService.emailPattern)],[this.EmailValidatorService]],
+    username:['',[Validators.required,this.validatorsService.canBestrider]],
     password:['',[Validators.required,Validators.minLength(6)]],
     password2:['',[Validators.required]],
 
-  })
+  },{
+    validators:[
+      this.validatorsService.isFieldOneEqualTwo('password','password2' ),
+    ]
+  });
 
-  constructor(private fb:FormBuilder){}
+  constructor(
+    private fb:FormBuilder,
+    private validatorsService: ValidatorsService,
+    private EmailValidatorService:emailValidatorService
+    ){}
 
   isvalidField(field:string){
-    // TODO: obtener validacion desde un servicio
+    return this.validatorsService.isvalidField(this.myForm,field)
   }
   onSubmit(){
     this.myForm.markAllAsTouched();
